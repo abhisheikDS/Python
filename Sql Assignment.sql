@@ -37,12 +37,6 @@ values(1,1001,'2023-08-19'),
       (2,1003,'2023-08-18');
 
 #Retrieving the data from the table  
-SELECT *
-FROM product_info
-WHERE product_id NOT IN
-    (SELECT DISTINCT product_id
-     FROM product_info_likes);
-     
 SELECT pi.product_id
 FROM product_info pi
 LEFT JOIN product_info_likes pil ON pi.product_id = pil.product_id
